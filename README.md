@@ -1,3 +1,1 @@
 # portfolio
-hello
-hyle
