@@ -4,10 +4,10 @@
 }
 
 body {
-  background: #171717;
+  background: #202020;
   color: #ffffff;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  padding: 20px 50px;
+ 
 }
 
 .header {
@@ -16,11 +16,11 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000; /* Ensure it's above other content */
-  background-color: #171717;
+  background-color:#202020;
   height: 65px;
   padding-right: 100px;
   padding-left: 100px;
-  padding-top: 20px;
+  padding-top: 45px;
 
 }
 
@@ -70,36 +70,38 @@ body {
 .links a {
   width: 150px;
   height: 50px;
-  border: 1px solid #ffffff;
-  padding: 5px 15px;
+  border: 2px solid #ffffff;
+  padding: 10px 20px;
   margin-top: 10px;
   text-decoration: none;
   color: #ffffff;
   margin-right: 10px;
+  border-radius: 40px;
 }
 
 .links a:hover {
-  background-color: rgb(18, 136, 18);
-  border-color: rgb(18, 136, 18);
+  background-color:white;
   transition: 0.3s ease;
+  color:#535353;
 }
 
 .cv {
-  background-color: rgb(18, 136, 18);
-  border: 1px solid rgb(18, 136, 18) !important;
+  background-color: rgb(38, 38, 38);
+  border: 2px solid rgb(18, 65, 136) !important;
   padding-bottom: 30px;
+  border-radius: 40px;
 }
 
 .links a.cv:hover {
-  background-color: rgb(18, 136, 18);
-  border: solid #ffffff !important;
+  background-color:  rgb(18, 65, 136);
+ 
   color: #ffffff;
   transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 
 }
 
 .projects {
-  background-color: #fff;
+  background-color: #d7d4d4;
   padding: 2rem;
   box-sizing: border-box;
   width: 100%;
@@ -109,15 +111,17 @@ body {
 .projects h2 {
   text-align: center;
   margin-bottom: 2rem;
-  color: #555;
+  color: #181717;
 }
 
 .project-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  justify-content: center;
+  justify-items: center;
+  height: 100vh;
 }
+
 
 .project {
   background-color: #fff;
@@ -126,6 +130,7 @@ body {
   overflow: hidden;
   transition: transform 0.3s;
   width: 300px;
+  
   
 }
 
@@ -152,6 +157,38 @@ body {
   transform: translateY(-10px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.do{
+  display: flex;
+  flex-direction: column;
+ 
+}
+.do .do-contents{
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  justify-items: center;
+
+
+}
+
+.do h1{
+  margin-bottom: 50px;
+  margin-left: 100px;
+  font-size: 30px;
+}
+.do .text-logos{
+  width:500px;
+  display: flex;
+}
+.text{
+  margin-left: 25px;
+}
+.logos{
+  color: rgb(18, 65, 136);
+  font-size: 35px;
+
+}
 
 main {
   margin-bottom: 200px;
@@ -161,19 +198,26 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
+ margin-top: 170px;
+ margin-bottom: 110px;;
 }
 
 .intro {
-  width: 45%;
-  display: inherit;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  width: 55%;
+
 }
 
 .intro h1 {
   font-size: 50px;
+  margin-bottom: 20px;
+
+}
+.intro h2 {
+  font-size: 15px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+  color:#aaaaaa
+
 }
 
 .intro h1:hover {
@@ -187,17 +231,22 @@ main {
 }
 
 .image img {
-  width: 400px;
-  height: 400px;
+  width: 420px;
+  height: 420px;
   border-radius: 50%;
-  margin-right: 200px;
- 
+  margin-left:190px;
+  border: 19px solid #555;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.7);
+  filter: grayscale(100%);
 }
 
-.image img:hover {
+
+img:hover {
+  filter: grayscale(0%);
   transform: scale(1.1);
-  transition: transform 0.3s ease;
+  transition: grayscale 1s, transform 0.3s ease;
 }
+
 
 .about,
 .services {
@@ -251,7 +300,7 @@ dt {
   padding-left: 100px;
   padding-right: 100px;
 }
-.footer {
+.contact{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -267,7 +316,7 @@ dt {
   justify-content: center;
   align-items: center;
   margin-top: 50px;
-  height: 100vh;
+
 }
 
 form {
@@ -303,11 +352,14 @@ form button {
   width: 100px;
   height: 40px;
   padding: 5px 10px;
-  background-color: rgb(18, 136, 18);
-  border: 1px solid rgb(18, 136, 18) !important;
+  background-color:  rgb(18, 65, 136);
+  border: 1px solid  rgb(18, 65, 136) !important;
   cursor: pointer;
+  color:white;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+
 
 form button:hover {
   background-color: transparent;
@@ -315,11 +367,7 @@ form button:hover {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.footer-social {
-  display: flex;
- 
-  margin-top: 30px;
-}
+
 
 .logos a {
   display: inline-block;
@@ -331,16 +379,24 @@ form button:hover {
 
 .logos a:hover {
   transform: scale(1.1);
-  color: rgb(54, 115, 139); /* Optional: change color on hover */
+  color: rgb(54, 115, 139); 
 }
 footer{
   display: flex;
 justify-content: space-between;
-
+margin-bottom: 10px;
+}
+.footer-social {
+  display: flex;
+  margin-top: 10px;
+  margin-left: 50px;
+  
+  
 }
 .footer-copyrights{
   margin-top: 30px;
-  font-size: 1opx
+  
+  margin-right: 50px;
 
 }
 
