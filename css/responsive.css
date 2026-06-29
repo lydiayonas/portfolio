@@ -1,0 +1,63 @@
+/* RESPONSIVE */
+  /* HAMBURGER BUTTON */
+  .nav-burger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    z-index: 110;
+  }
+  .nav-burger span {
+    display: block;
+    width: 22px; height: 2px;
+    background: var(--ink);
+    border-radius: 2px;
+    transition: transform 250ms var(--ease), opacity 200ms var(--ease);
+  }
+  .nav-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-burger.is-open span:nth-child(2) { opacity: 0; }
+  .nav-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 900px) {
+    .hero-inner { grid-template-columns: 1fr; }
+    .photo-card { max-width: 320px; margin: 0 auto; }
+    .about-grid, .contact-wrap { grid-template-columns: 1fr; }
+    .skills-grid, .certs-grid { grid-template-columns: 1fr 1fr; }
+    .projects-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 760px) {
+    .nav-links {
+      position: fixed;
+      top: 65px; left: 0; right: 0;
+      background: rgba(10,10,20,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 24px 28px 30px;
+      gap: 22px;
+      border-bottom: 1px solid var(--line-bright);
+      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.5);
+      transform: translateY(-12px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 260ms var(--ease), transform 260ms var(--ease);
+      z-index: 99;
+    }
+    .nav-links.open {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .nav-links a { font-size: 16px; width: 100%; }
+    .nav-burger { display: flex; }
+    /* hide the hire me button in nav on small screens — it's in the menu */
+    .nav-inner > .btn { display: none; }
+  }
+  @media (max-width: 600px) {
+    .skills-grid, .certs-grid { grid-template-columns: 1fr; }
+    .cta-box { padding: 50px 28px; }
+  }

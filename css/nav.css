@@ -1,0 +1,42 @@
+/* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,20,0.75); backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 28px; max-width: var(--maxw); margin: 0 auto;
+  }
+  .logo { display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 18px; }
+  .logo-mark {
+    width: 30px; height: 30px; border-radius: 8px; background: var(--grad-main);
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    animation: logo-pulse 3s ease-in-out infinite;
+  }
+  .logo-mark svg { width: 15px; height: 15px; color: #fff; }
+  @keyframes logo-pulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(139,92,246,0.5); }
+    50% { box-shadow: 0 0 0 10px rgba(139,92,246,0); }
+  }
+  .nav-links { display: flex; align-items: center; gap: 32px; }
+  .nav-links a { font-size: 14px; font-weight: 500; color: var(--ink-soft); position: relative; padding: 4px 0; transition: color 200ms var(--ease); }
+  .nav-links a::after { content: ''; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--grad-main); border-radius: 2px; transition: width 250ms var(--ease); }
+  .nav-links a:hover { color: var(--ink); }
+  .nav-links a:hover::after { width: 100%; }
+
+  /* BUTTONS */
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Inter', sans-serif; font-weight: 600; font-size: 14px;
+    padding: 11px 22px; border-radius: 100px; cursor: pointer;
+    border: 1.5px solid transparent;
+    transition: transform 200ms var(--ease), box-shadow 200ms var(--ease);
+    white-space: nowrap; position: relative; overflow: hidden;
+  }
+  .btn::after { content: ''; position: absolute; inset: 0; background: rgba(255,255,255,0.08); opacity: 0; transition: opacity 200ms; }
+  .btn:hover::after { opacity: 1; }
+  .btn-primary { background: var(--grad-main); color: #fff; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 28px -8px rgba(139,92,246,0.5); }
+  .btn-ghost { border-color: var(--line-bright); color: var(--ink); background: rgba(255,255,255,0.04); }
+  .btn-ghost:hover { border-color: var(--violet); color: var(--violet); }
